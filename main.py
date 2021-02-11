@@ -1,10 +1,11 @@
 import pandas as pd
-from modules.SectionParameters import SectionParameters
+from modules.SectionParametersE6 import SectionParameters
 from modules.FilesAndDates import FilesAndDates
 from modules.FrostDepthPlot import FrostDepthPlot
 from modules.FreezingIndexPlot import FreezingIndexPlot
 from modules.AirTemperaturePlot import AirTemperaturePlot
 from modules.TemperatureGradientPlot import TemperatureGradientPlot
+from modules.SampleDataE6 import SampleDataE6
 
 # Comments to fix:
 # maybe when plotting the data should also be fixed to teh input start_data and end_data
@@ -14,12 +15,16 @@ from modules.TemperatureGradientPlot import TemperatureGradientPlot
 # INPUT VALUES ARE HERE:
 start_date = pd.Timestamp(2020, 10, 1)
 end_date = pd.Timestamp(2021, 1, 10)
-filename1 = r'C:\Users\karlisr\OneDrive - NTNU\2_PostDoc_NTNU\06_E6_project_Reports_and_data\3_frost_penetration_and_FI\year_2020_2021\E6_frost_front_progression_2020_2021.xlsx'
-filename2 = r'C:\Users\karlisr\OneDrive - NTNU\2_PostDoc_NTNU\06_E6_project_Reports_and_data\3_frost_penetration_and_FI\year_2020_2021\E6_air_temperature_winter_2020_2021.xlsx'
-filename3 = r'C:\Users\karlisr\OneDrive - NTNU\2_PostDoc_NTNU\06_E6_project_Reports_and_data\3_frost_penetration_and_FI\year_2020_2021\E6_freezing_index_year_2020_2021.xlsx'
-# frost_front_progression
-# air_temperature
-# freezing_index
+
+file1 = 'frost_front_progression.xlsx'
+file2 = 'air_temperature.xlsx'
+file3 = 'freezing_index.xlsx'
+
+sample_data = SampleDataE6()
+
+filename1 = sample_data.year_2020_2021['dir'] + file1
+filename2 = sample_data.year_2020_2021['dir'] + file2
+filename3 = sample_data.year_2020_2021['dir'] + file3
 
 # Load parameter initialization
 section_parameters = SectionParameters()

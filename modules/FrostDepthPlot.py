@@ -118,10 +118,10 @@ class FrostDepthPlot:
             ax2.tick_params(direction='in', width=1.5)
 
         # save show options:
-        if self.save_figure == True:
+        if self.save_figure:
             fig.savefig(save_name, dpi=300, bbox_inches='tight')
 
-        if self.show_figure == True:
+        if self.show_figure:
             plt.show()
 
         plt.close(fig)
