@@ -1,7 +1,13 @@
-import numpy as np
+import matplotlib.pyplot as plt
 
-numbers = [2, 1, -1, -2, -1, 1, 2]
+fig, ax = plt.subplots()
 
-ff_neg_loc = 0
-ff_pos_loc = 0
-for i in numbers:
+ax.plot([1, 2, 3], [1, 2, 3])
+
+ax_twin = ax.twinx()
+ax_twin.plot([1, 1], [2, 2])
+
+ax.set_ylim([1, 3])
+
+ax.invert_yaxis()
+plt.show()

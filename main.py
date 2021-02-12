@@ -2,6 +2,7 @@ import pandas as pd
 from section_parameters.SectionParametersE6 import SectionParametersE6
 from modules.FilesAndDates import FilesAndDates
 from modules.FrostDepthPlot import FrostDepthPlot
+from modules.FigureFormatting import FigureFormatting
 from modules.FreezingIndexPlot import FreezingIndexPlot
 from modules.AirTemperaturePlot import AirTemperaturePlot
 from modules.TemperatureGradientPlot import TemperatureGradientPlot
@@ -31,14 +32,18 @@ filename1 = sample_data.year_2020_2021['dir'] + file1
 filename2 = sample_data.year_2020_2021['dir'] + file2
 filename3 = sample_data.year_2020_2021['dir'] + file3
 
+# Plot formatter
+formatter = FigureFormatting()
+
 # Initialize files and dates
 files_and_dates = FilesAndDates(start_date, end_date, filename1, filename2, filename3)
 
 # Plot frost depth figures
 frost_depth = FrostDepthPlot(files_and_dates)
 def printingstuff():
-	for section in section_parameters.section_list:
-		frost_depth.plot_frost_depth(section_name=section['section_name'],
+	for section in section_parameters.section_list[:1]:
+		frost_depth.plot_frost_depth(formatter=formatter.std_paper_1x1_full_width_tall,
+									 section_name=section['section_name'],
 									 save_name=section['save_name'],
 									 frost_front=section['frost_front'],
 									 thaw_front=section['thaw_front'],
