@@ -163,9 +163,10 @@ t032 = 1.1
 t22180 = 1.1
 
 
-class SectionParameters2:
+class SectionParametersE6:
     def __init__(self):
         self.section_F1 = {'section_name': 'F1 - unsorted gravel',
+                           'save_name': 'F1_unsorted_gravel',
                            'frost_front': 'F1_frost',
                            'thaw_front': 'F1_thaw',
                            'interface_list': F1_interface,
@@ -175,6 +176,7 @@ class SectionParameters2:
                                            ['subgrade']]}
 
         self.section_F2 = {'section_name': 'F2 - XPS',
+                           'save_name': 'F2_XPS',
                            'frost_front': 'F2_frost',
                            'thaw_front': 'F2_thaw',
                            'interface_list': F2_interface,
@@ -187,6 +189,7 @@ class SectionParameters2:
                                            ['subgrade']]}
 
         self.section_F3 = {'section_name': 'F3 - 0/180 crushed rock',
+                           'save_name': 'F3_0_180_crushed_rock',
                            'frost_front': 'F3_frost',
                            'thaw_front': 'F3_thaw',
                            'interface_list': F3_interface,
@@ -196,6 +199,7 @@ class SectionParameters2:
                                            ['subgrade']]}
 
         self.section_F4 = {'section_name': 'F4 - foam glass',
+                           'save_name': 'F4_foam_glass',
                            'frost_front': 'F4_frost',
                            'thaw_front': 'F4_thaw',
                            'interface_list': F4_interface,
@@ -206,6 +210,7 @@ class SectionParameters2:
                                            ['subgrade']]}
 
         self.section_F5 = {'section_name': 'F5 - 0/32 crushed rock',
+                           'save_name': 'F5_0_32_crushed_rock',
                            'frost_front': 'F5_frost',
                            'thaw_front': 'F5_thaw',
                            'interface_list': F5_interface,
@@ -214,7 +219,8 @@ class SectionParameters2:
                                            ['0/32 crushed rock:', '1100mm'],
                                            ['subgrade']]}
 
-        self.section_F6 = {'section_name': 'F6 - foam glass',
+        self.section_F6 = {'section_name': 'F6 - expanded clay',
+                           'save_name': 'F6_expanded_clay',
                            'frost_front': 'F6_frost',
                            'thaw_front': 'F6_thaw',
                            'interface_list': F6_interface,
@@ -225,6 +231,7 @@ class SectionParameters2:
                                            ['subgrade']]}
 
         self.section_F7 = {'section_name': 'F7 - 22/180 crushed rock',
+                           'save_name': 'F7_22_180_crushed_rock',
                            'frost_front': 'F7_frost',
                            'thaw_front': 'F7_thaw',
                            'interface_list': F7_interface,
@@ -232,6 +239,14 @@ class SectionParameters2:
                                            ['subbase:', '250mm'],
                                            ['22/180 crushed rock:', '1100mm'],
                                            ['subgrade']]}
+
+        self.section_list = [self.section_F1,
+                             self.section_F2,
+                             self.section_F3,
+                             self.section_F4,
+                             self.section_F5,
+                             self.section_F6,
+                             self.section_F7]
 
 class SectionParameters:
     def __init__(self):
