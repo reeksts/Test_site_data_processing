@@ -28,7 +28,6 @@ class FrostDepthPlot:
                          show_fig=True):
         # initializer:
         fig, ax = plt.subplots(figsize=formatter['figsize'])
-        #ax.invert_yaxis()
         plt.tight_layout()
 
         # plot data:
@@ -94,7 +93,7 @@ class FrostDepthPlot:
                 color='black',
                 weight='bold')
 
-        # PRIMARY CONFIGURATION (configuration not depending on twinx):
+        # PRE-CONFIGURATION (has to be executed before the twinx plot):
         # legend:
         legend = ax.legend(loc='lower right',
                            fontsize=formatter['legend_size'],
@@ -135,12 +134,12 @@ class FrostDepthPlot:
             legend2.get_frame().set_linewidth(formatter['legend_frame_width'])
             legend2.get_frame().set_edgecolor(formatter['legend_edge_color'])
             ax_twin.add_artist(legend)
+                        # ax_twin.legend(loc="lower right", bbox_to_anchor=(0.55, 0, 0.3, 0.2))  ?????
 
             # ticks:
             ylim_twin, yticks_twin = self.generate_yaxis_twin_ticks()
             ax_twin.set_ylim(ylim_twin)
             ax_twin.set_yticks(yticks_twin)
-            ax_twin.xaxis.set_major_formatter(DateFormatter("%Y-%m-%d"))
             ax_twin.legend(loc="lower right", bbox_to_anchor=(0.55, 0, 0.3, 0.2))
             ax_twin.tick_params(direction='in', width=1.5)
             ax.tick_params(axis='both', direction='in', width=formatter['tick_width'], top=True,
@@ -159,13 +158,12 @@ class FrostDepthPlot:
             ax.tick_params(axis='both', direction='in', width=formatter['tick_width'], right=True, top=True,
                            labelsize=formatter['tick_size'], length=formatter['tick_length'])
 
-
-        # SECONDARY CONFIGURATION (configuration not depending on twinx):
+        # MAIN CONFIGURATION:
         # ticks:
+        #ax.invert_yaxis()
         ax.set_xlim(self.dfs.zero_date, self.dfs.end_date)
         ax.set_xticks(self.dfs.date_list)
-        ax.set_ylim([4, 0])
-        ax.invert_yaxis()
+        ax.set_ylim([0, 4])
         ax.set_yticks([0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4.0])
         ax.xaxis.set_major_formatter(DateFormatter("%Y-%m-%d"))
         ax.yaxis.set_major_formatter(FormatStrFormatter('%.0f'))
@@ -177,7 +175,7 @@ class FrostDepthPlot:
 
         # title:
         if title:
-            ax.set_title('enyter title here')
+            ax.set_title(section_name)
 
         # save show options:
         if save_fig:
