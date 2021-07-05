@@ -1,13 +1,18 @@
-import matplotlib.pyplot as plt
+import tkinter as tk
 
-fig, ax = plt.subplots()
+root = tk.Tk()
 
-ax.plot([1, 2, 3], [1, 2, 3])
+main_frame = tk.Frame(root, bg='yellow')
+main_frame.pack(side='top', fill='both', expand=True)
 
-ax_twin = ax.twinx()
-ax_twin.plot([1, 1], [2, 2])
+inner_left = tk.Frame(main_frame, bg='green')
+inner_left.pack(side='left', expand=True)
+text_left = tk.Label(inner_left, text='jgjhgjg')
+text_left.pack(side='top')
 
-ax.set_ylim([1, 3])
+inner_right = tk.Frame(main_frame, bg='red')
+inner_right.pack(side='left', fill='both', expand=True)
+text_left = tk.Label(inner_right, text='jgjhgjg')
+text_left.pack(side='top')
 
-ax.invert_yaxis()
-plt.show()
+root.mainloop()

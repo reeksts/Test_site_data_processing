@@ -144,7 +144,6 @@ F7_int3 = 1.05  # subbase/frost protection interface
 F7_int4 = 2.15  # frost protection/subgrade interface
 F7_interface = [F7_int1, F7_int2, F7_int3, F7_int4]
 
-
 #####   layer thicknesses   ######
 asphalt = 0.25
 subbase = 0.8
