@@ -3,7 +3,7 @@ import pandas as pd
 class TestsiteDataRoros:
 	def __init__(self):
 		self.testsite_dir = {'name': 'Roros',
-							 'dir': 'C:\\Users\\karlisr\\OneDrive - NTNU\\6_Project_Repos\\E6_SVV_field_meausrements\\'
+							 'dir': 'C:\\Users\\karlisr\\OneDrive - NTNU\\6_Project_Repos\\Test_site_data_processing\\'
 									'input\\Roros'}
 
 		self.year_2018_2019 = {'year_name': 'rrrr2018/2019',

@@ -10,7 +10,7 @@ from modules.AirTemperaturePlot import AirTemperaturePlot
 from modules.TemperatureGradientPlot import TemperatureGradientPlot
 from testsite_data.TestsiteDataE6 import SampleDataE6
 
-# TEST 111
+# TEST 222
 
 # Comments to fix:
 # maybe when plotting the data should also be fixed to teh input start_data and end_data
@@ -65,7 +65,7 @@ def printingstuff():
 
 
 # Animated figure control
-os.chdir('C:\\Users\\karlisr\\OneDrive - NTNU\\6_Project_Repos\\E6_SVV_field_meausrements\\')
+os.chdir('C:\\Users\\karlisr\\OneDrive - NTNU\\6_Project_Repos\\Test_site_data_processing\\')
 
 df = pd.read_excel('hourly_measurements_Roros.xlsx',
                    sheet_name='sheet1',

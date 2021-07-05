@@ -3,7 +3,7 @@ import os
 
 class DirectoryGenerator:
 	def __init__(self):
-		self.output_dir = 'C:\\Users\\karlisr\\OneDrive - NTNU\\6_Project_Repos\\E6_SVV_field_meausrements\\output\\'
+		self.output_dir = 'C:\\Users\\karlisr\\OneDrive - NTNU\\6_Project_Repos\\Test_site_data_processing\\output\\'
 
 	def generate_directories(self, testsite):
 		parent_dir = self.output_dir + testsite.testsite_dir['name'] + '\\'
